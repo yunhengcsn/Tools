@@ -6,7 +6,13 @@ import java.util.UUID;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.beanutils.ConvertUtils;
 
-
+/**
+ * @BelongsProject: Tools
+ * @BelongsPackage: tools.commons
+ * @Author: csn
+ * @Description: generate uid ,or convert map into javabean;rely on commons-beanutils.jar
+ *
+ */
 public class CommonUtils {
 	/**
 	 * 返回一个不重复的字符串
