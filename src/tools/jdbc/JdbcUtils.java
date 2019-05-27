@@ -9,7 +9,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /**
  * src加配置c3p0-config.xml文件
- * @description: support transaction; rely on c3p0.jar & mchange-commons.jar & c3p0-oracle-thin-extras.jar
+ * @description: support transaction; rely on c3p0.jar & mchange-commons.jar & c3p0-oracle-thin-extras.jar & mysql-connector.jar
  * @author csn
  */
 public class JdbcUtils {

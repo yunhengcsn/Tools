@@ -10,7 +10,7 @@ import org.apache.commons.beanutils.ConvertUtils;
  * @BelongsProject: Tools
  * @BelongsPackage: tools.commons
  * @Author: csn
- * @Description: generate uid ,or convert map into javabean;rely on commons-beanutils.jar
+ * @Description: generate uid ,or convert map into javabean;rely on commons-beanutils.jar and commons-logging.jar
  *
  */
 public class CommonUtils {

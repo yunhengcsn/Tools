@@ -62,6 +62,7 @@ public class BaseServlet extends HttpServlet {
 				}
 			}
 		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+			e.printStackTrace();
 			throw new RuntimeException("调用方法时出现异常!");
 		}
 	}
