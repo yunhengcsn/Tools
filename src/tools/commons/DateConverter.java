@@ -6,15 +6,17 @@ import java.text.SimpleDateFormat;
 import org.apache.commons.beanutils.Converter;
 
 /**
- * 把String转换成java.util.Date的类型转换器
- *
+ * @BelongsProject: Tools
+ * @BelongsPackage: tools.commons
+ * @Author: csn
+ * @Description: 把String转换成java.util.Date的类型转换器
  */
 public class DateConverter implements Converter {
 
 	@SuppressWarnings("rawtypes")
 	@Override
 	public Object convert(Class type, Object value) {
-		if(value == null) return null;//如果要转换成值为null，那么直接返回null
+		if(value == null) return null;
 		if(!(value instanceof String)) {//如果要转换的值不是String，那么就不转换了，直接返回
 			return value;
 		}
