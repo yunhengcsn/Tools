@@ -8,8 +8,7 @@ import java.util.Map;
 /**
  * @BelongsProject: Tools
  * @BelongsPackage: tools.filter
- * @Author: Dell
- * @CreateTime: 2019-05-27 21:33
+ * @Author: csn
  * @Description:
  */
 public class GetRequest extends HttpServletRequestWrapper {
