@@ -18,8 +18,7 @@ public class BaseServlet extends HttpServlet {
 
 	@Override
 	public void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//处理乱码
-		req.setCharacterEncoding("utf-8");
+		//处理响应乱码
 		resp.setContentType("text/html;charset=utf-8");
 
 		//获取参数
@@ -35,7 +34,7 @@ public class BaseServlet extends HttpServlet {
 		try {
 			m = c.getMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
 		} catch (NoSuchMethodException | SecurityException e) {
-			throw new RuntimeException("所调用的方法不存在!");
+			throw new RuntimeException("所调用的方法"+ methodName +"不存在!");
 		}
 		//得到调用方法返回的字符串
 		//完成转发或重定向
@@ -63,7 +62,7 @@ public class BaseServlet extends HttpServlet {
 			}
 		} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 			e.printStackTrace();
-			throw new RuntimeException("调用方法时出现异常!");
+			throw new RuntimeException("调用方法时"+ methodName +"出现异常!");
 		}
 	}
 	
