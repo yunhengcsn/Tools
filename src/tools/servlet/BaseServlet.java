@@ -32,7 +32,7 @@ public class BaseServlet extends HttpServlet {
 		Class c = this.getClass();
 		Method m ;
 		try {
-			m = c.getMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
+			m = c.getDeclaredMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
 		} catch (NoSuchMethodException | SecurityException e) {
 			throw new RuntimeException("所调用的方法"+ methodName +"不存在!");
 		}
@@ -55,7 +55,7 @@ public class BaseServlet extends HttpServlet {
 				if(option.equalsIgnoreCase("f")) {//转发
 					req.getRequestDispatcher(path).forward(req, resp);
 				} else if(option.equalsIgnoreCase("r")) {//重定向
-					resp.sendRedirect(req.getServletPath() + path);
+					resp.sendRedirect(req.getContextPath() + path);
 				} else {//其他
 					throw new RuntimeException("不支持指定操作！");
 				}
