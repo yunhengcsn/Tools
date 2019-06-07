@@ -23,7 +23,8 @@ public class GetRequest extends HttpServletRequestWrapper {
     @Override
     public String getParameter(String name){
         String val = req.getParameter(name);
-        if(val == null) return null;
+
+        /*if(val == null) return null;
         String encodedParam = null;
         try {
             //对参数进行编码处理
@@ -31,13 +32,14 @@ public class GetRequest extends HttpServletRequestWrapper {
         } catch (UnsupportedEncodingException e) {
             e.printStackTrace();
         }
-        return encodedParam;
+        System.out.println("get编码后"+encodedParam);*/
+        return val;
     }
 
     @Override
     public Map<String, String[]> getParameterMap() {
         Map<String,String[]> map = req.getParameterMap();
-        if(map == null) return map;
+        /*if(map == null) return map;
         for(String key : map.keySet()) {
             String[] vals = map.get(key);
             for(int i = 0; i < vals.length; i++) {
@@ -47,20 +49,20 @@ public class GetRequest extends HttpServletRequestWrapper {
                     e.printStackTrace();
                 }
             }
-        }
+        }*/
         return map;
     }
 
     @Override
     public String[] getParameterValues(String name) {
         String[] vals = req.getParameterValues(name);
-        for(int i = 0; i < vals.length; i++) {
+        /*for(int i = 0; i < vals.length; i++) {
             try {
                 vals[i] = new String(vals[i].getBytes("ISO-8859-1"),charset);
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
         return vals;
     }
 }
